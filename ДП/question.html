@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вопросы</title>
+    <link rel="stylesheet" href="question.css">
+    <link href="https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800" rel="stylesheet" />
+    <script src="burger.js"></script>
+
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="top-navigation">
+            <div class="top-bar">
+                <div class="logo">
+                    <a href="main.html">
+                        <img src="Диплом/лого.png" alt="AutoFather Logo">
+                    </a>
+                </div>
+                <nav class="menu">
+                    <a href="main.html">Главная</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="./Forms/orderform.html">Запись</a>
+                    <a href="#">Форум</a>
+                    <a href="contacs.html">Контакты</a>
+                    <a href="./Forms/loginform.html"><img src="Диплом/Профиль.png"></a>
+                </nav>
+
+                <div class="burger-menu" onclick="toggleMenu()">
+                    <img src="Диплом/burger.png" alt="Меню">
+                  </div>
+
+                <div class="contact-info-header">
+                    <div class="place">
+                        <img src="Диплом/место.png" alt="Местоположение">
+                        <p>Шаранговича 64</p>
+                    </div>
+                    <div class="number">
+                        <p class="phone"><a href="tel: 8 (029) 768 33 88">8 (029) 768 33 88</a></p>
+                        <p>Ежедневно 09:00 - 21:00</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+
+    <nav class="breadcrumbs">
+        <a href="main.html">Главная | </a>
+        <span>Форум</span>
+    </nav>
+
+    <div class="container">
+        <!-- Заголовок -->
+        <div class="header">
+            <h1>Форум</h1>
+        </div>
+
+        <!-- Раздел часто задаваемых вопросов -->
+        <div class="faq-section">
+            <h2>Часто задаваемые вопросы</h2>
+
+            <div class="faq-item">
+                <h3>Как оставить заказ на услугу?</h3>
+                <p>Вы можете оставить заказ через раздел "Заказы" на главной странице. Просто выберите услугу, заполните
+                    данные и отправьте заявку.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Какие способы оплаты доступны?</h3>
+                <p>Мы принимаем оплату наличными, банковской картой и через онлайн-кошельки.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Сколько времени занимает обслуживание?</h3>
+                <p>Время зависит от выбранной услуги. Например, замена масла занимает около 30 минут, а более сложные
+                    работы могут занять несколько часов.</p>
+            </div>
+        </div>
+
+        <!-- Раздел задать вопрос -->
+        <div class="ask-question-section">
+            <h2>Задать вопрос</h2>
+            <textarea placeholder="Ваш вопрос..."></textarea>
+            <button>Отправить</button>
+        </div>
+    </div>
+
+    <script>
+        // Скрипт для раскрытия ответа на вопрос
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                const isVisible = answer.style.display === 'block';
+                document.querySelectorAll('.faq-item p').forEach(p => p.style.display = 'none'); 
+                answer.style.display = isVisible ? 'none' : 'block'; 
+            });
+        });
+    </script>
+</body>
+
+</html>

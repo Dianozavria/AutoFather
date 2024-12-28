@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar a:hover {
+    background-color: #444;
+}
+
+.main {
+    margin-left: 350px;
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 30px;
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #333;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 5px 10px;
+    background-color: #ff3b3b;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #e23232;
+}
+
+
+.active {
+    display: block;
+
+}
+#addServiceForm,
+#editServiceForm,
+#addUserForm {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#addServiceForm label,
+#editServiceForm label,
+#addUserForm label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+#addServiceForm select ,
+#addUserForm  select{
+    width:100% ;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+#editServiceForm  select,
+#addUserForm select{
+    width:100% ;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#addServiceForm input,
+#addServiceForm textarea,
+#editServiceForm input,
+#editServiceForm textarea,
+#addUserForm input,
+#addUserForm textarea{
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#addServiceForm textarea,
+#editServiceForm  textarea,
+#addUserForm textarea{
+    height: 80px;
+    resize: none;
+}
+
+#addServiceForm button,
+#editServiceForm button,
+#addUserForm button{
+    width: calc(50% - 10px);
+    margin-right: 10px;
+}
+
+#addServiceForm button:last-child,
+#editServiceForm button:last-child,
+#addUserForm button:last-child{
+    margin-right: 0;
+}
+
+
+.input-group.error input {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+    animation: fadeIn 0.3s ease;
+    text-align: left; 
+    margin-left: 54px; 
+}
+
+.input-group.error .error-message {
+    display: block; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

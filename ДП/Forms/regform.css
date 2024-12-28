@@ -1,0 +1,200 @@
+body {
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+.register-form {
+    width: 465px;
+    height: 526px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: height 0.3s ease;
+}
+
+.register-form h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.input-group-row {
+    display: flex;
+    width: 175 px;
+    justify-content: space-between;
+} 
+
+.input-group-row input{
+    margin: 0;
+}
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: calc(100% - 80px);
+    height: 40px;
+    margin: 0px 23px 0px 54px;
+    font-size: 14px;
+    border: 1px solid #D9D9D9;
+    border-radius: 40px;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.input-group input:focus {
+    border-color: #EC1826;
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 26px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 37px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 14px;
+    color: #999;
+}
+
+.cross {
+    margin: 0px 370px 0px 450px;
+}
+
+button {
+    width: 245px;
+    height: 40px;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 26px;
+    margin-bottom: 15px;
+    background-color: #EC1826;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ac2525;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.input-group input.error {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+    animation: fadeIn 0.3s ease;
+    text-align: left; 
+    margin-left: 54px; 
+}
+
+#confirmPassError {
+    margin-left: 54px; 
+}
+
+.register-form.expanded {
+    height: auto;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 375px) {
+
+    .cross {
+        margin: 0px 40px 0px 290px;
+    }
+
+    .register-form {
+        width: 80%;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: 526px;
+      
+    }
+    
+    .register-form h2 {
+        font-size:16px;
+        margin-bottom: 20px;
+    }
+
+    
+    .input-group-row input{
+        margin: 0;
+    }
+    .input-group {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    .input-group input {
+        width: calc(100% - 80px);
+        height: 40px;
+        margin: 0px 23px 0px 54px;
+        font-size: 14px;
+       
+    }
+    
+    .input-group i {
+        font-size: 10px;
+    }
+    
+    .password-toggle {
+        right: 17px;
+    }
+    
+    button {
+        width: 245px;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        margin-top: 16px;
+        margin-bottom: 15px;
+
+    }
+
+}

@@ -1,0 +1,27 @@
+
+<link rel="stylesheet" href="loginform.css">
+  <div class="auth-form" id="authFormContainer">
+    <button id="close-btn" > <img src="/Диплом/cross.png"></button>
+    <h2>Авторизация</h2>
+    <form id="authForm" >
+      <div class="input-group">
+        <i><img src="Диплом/имя.png"></i>
+        <input id="name" type="text" placeholder="Имя" required>
+        <span class="error-message" id="nameError"></span>
+      </div>
+      <div class="input-group">
+        <i><img src="Диплом/телефон (1).png"></i>
+        <input id="tel" type="tel" placeholder="Номер телефона" required>
+        <span class="error-message" id="telError"></span>
+      </div>
+      <div class="input-group">
+        <i><img src="Диплом/пароль.png"></i>
+        <input id="pass" type="password" placeholder="Пароль" required>
+        <span class="password-toggle" id="togglePassword"><img src="Диплом/глаз.png" alt="Показать пароль"></span>
+        <span class="error-message" id="passError"></span>
+      </div>
+      <button type="submit" class="auth-button">Войти</button>
+    </form>
+    <a href="#" id="openRegisterLink"><ins>Зарегистрироваться</ins></a>
+  </div>
+

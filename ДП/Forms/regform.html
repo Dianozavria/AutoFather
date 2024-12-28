@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="regform.css">
+    <link href="https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="register-form" id="register-form">
+        <div class="cross"><img src="../Диплом/cross.png"></div>
+        <h2>Регистрация</h2>
+        <form>
+            <div class="input-group-row">
+                <div class="input-group">
+                    <i><img src="../Диплом/имя.png"></i>
+                    <input id="name" type="text" placeholder="Имя" required>
+                    <div class="error-message" id="nameError"></div>
+                </div>
+                <div class="input-group">
+                    <input id="surname" type="text" placeholder="Фамилия" required>
+                    <div class="error-message" id="surnameError"></div>
+                </div>
+            </div>
+            <div class="input-group">
+                <i><img src="../Диплом/emai.png"></i>
+                <input id="email" type="email" placeholder="Почта" required>
+                <div class="error-message" id="emailError"></div>
+            </div>
+            <div class="input-group">
+                <i><img src="../Диплом/телефон (1).png"></i>
+                <input id="tel" type="tel" placeholder="Номер телефона" required>
+                <div class="error-message" id="telError"></div>
+            </div>
+            <div class="input-group">
+                <i><img src="../Диплом/пароль.png"></i>
+                <input id="pass" type="password" placeholder="Пароль" required>
+                <span class="password-toggle"><img src="../Диплом/глаз.png"></span>
+                <div class="error-message" id="passError"></div>
+            </div>
+            <div class="input-group">
+                <i><img src="../Диплом/пароль.png"></i>
+                <input id="confirmPass" type="password" placeholder="Подтверждение пароля" required>
+                <span class="password-toggle"><img src="../Диплом/глаз.png"></span>
+                
+                <div class="error-message" id="confirmPassError"></div>
+            </div>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+        <a href="loginform.html">Уже есть аккаунт?</a>
+
+
+    </div>
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            let valid = true;
+
+
+            resetErrors();
+
+            // Проверка имени
+            const nameInput = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            const nameRegex = /^[A-ZА-Я][a-zа-яё]*$/; 
+            if (!nameRegex.test(nameInput.value)) {
+                nameError.textContent = "Имя должно начинаться с заглавной буквы.";
+                nameError.style.display = 'block';
+                nameInput.classList.add('error');
+                valid = false;
+            }
+
+            // Проверка телефона
+            const telInput = document.getElementById('tel');
+            const telError = document.getElementById('telError');
+            const telValue = telInput.value;
+            if (!telValue.startsWith('+375')) {
+                telError.textContent = "Номер телефона должен начинаться с +375.";
+                telError.style.display = 'block';
+                telInput.classList.add('error');
+                valid = false;
+            } else {
+                const digits = telValue.slice(4).replace(/\D/g, ""); 
+                if (digits.length < 9) {
+                    telError.textContent = "Номер телефона слишком короткий.";
+                    telError.style.display = 'block';
+                    telInput.classList.add('error');
+                    valid = false;
+                } else if (digits.length > 9) {
+                    telError.textContent = "Номер телефона слишком длинный.";
+                    telError.style.display = 'block';
+                    telInput.classList.add('error');
+                    valid = false;
+                }
+            }
+
+            // Проверка пароля
+            const passInput = document.getElementById('pass');
+            const passError = document.getElementById('passError');
+            if (passInput.value.length < 8) {
+                passError.textContent = "Пароль должен быть не менее 8 символов.";
+                passError.style.display = 'block';
+                passInput.classList.add('error');
+                valid = false;
+            }
+
+            // Проверка совпадения паролей
+            const confirmPassInput = document.getElementById('confirmPass');
+            const confirmPassError = document.getElementById('confirmPassError');
+            if (confirmPassInput.value !== passInput.value) {
+                confirmPassError.textContent = "Пароли не совпадают.";
+                confirmPassError.style.display = 'block';
+                confirmPassInput.classList.add('error');
+                valid = false;
+            }
+
+            // Если все поля валидны, отправляем форму
+            if (valid) {
+                alert("Регистрация прошла успешно!");
+                this.submit();
+            } else {
+
+                document.querySelector('.register-form').classList.add('expanded');
+            }
+        });
+
+        // Функция сброса всех ошибок
+        function resetErrors() {
+            const errorMessages = document.querySelectorAll('.error-message');
+            const errorInputs = document.querySelectorAll('.input-group input');
+
+            errorMessages.forEach(function (message) {
+                message.style.display = 'none';
+            });
+            errorInputs.forEach(function (input) {
+                input.classList.remove('error');
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

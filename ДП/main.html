@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800" rel="stylesheet" />
+
+  <script src="burger.js"></script>
+</head>
+
+<body>
+  <!-- Шапка сайта -->
+  <header>
+    <div class="top-navigation">
+      <div class="top-bar">
+        <div class="logo">
+          <a href="main.html">
+            <img src="Диплом/лого.png" alt="AutoFather Logo">
+          </a>
+        </div>
+        <nav class="menu">
+          <a href="#">Главная</a>
+          <a href="services.html">Услуги</a>
+          <a href="./Forms/orderform.html">Запись</a>
+          <a href="question.html">Форум</a>
+          <a href="contacs.html">Контакты</a>
+          <a href="#" id="form-open">
+            <img src="Диплом/Профиль.png" alt="Профиль">
+        </a>
+          
+        </nav>
+
+        <div class="burger-menu" onclick="toggleMenu()">
+          <img src="Диплом/burger.png" alt="Меню">
+        </div>
+      
+
+
+        <div class="contact-info-header">
+          <div class="place">
+            <img src="Диплом/место.png" alt="Местоположение">
+            <p>Шаранговича 64</p>
+          </div>
+          <div class="number">
+            <p class="phone"><a href="tel: 8 (029) 768 33 88">8 (029) 768 33 88</a></p>
+            <p>Ежедневно 09:00 - 21:00</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <div id="overlay"></div>
+  <div id="form-popup"></div>
+  <script src="login.js"></script>
+
+  <!---<script>
+    const profileIcon = document.getElementById('profile-icon');
+    const authFormContainer = document.getElementById('authFormContainer');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('close-btn');
+
+    // Открыть форму авторизации
+    profileIcon.addEventListener('click', (e) => {
+      e.preventDefault();
+      authFormContainer.classList.add('active');
+      overlay.classList.add('active');
+    });
+
+    // Закрыть форму авторизации
+    closeBtn.addEventListener('click', () => {
+      authFormContainer.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+
+    // Закрыть по клику на затемнённый фон
+    overlay.addEventListener('click', () => {
+      authFormContainer.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+
+    // Валидация формы
+    document.getElementById('authForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      let valid = true;
+
+      // Проверка имени
+      const nameInput = document.getElementById('name');
+      const nameError = document.getElementById('nameError');
+      const nameRegex = /^[A-ZА-ЯЁ][a-zа-яё]*$/;
+      if (!nameRegex.test(nameInput.value)) {
+        nameError.textContent = "Имя должно начинаться с заглавной буквы.";
+        nameError.style.display = 'block';
+        valid = false;
+      } else {
+        nameError.style.display = 'none';
+      }
+
+      // Проверка телефона
+      const telInput = document.getElementById('tel');
+      const telError = document.getElementById('telError');
+      const telRegex = /^\+375\d{9}$/;
+      if (!telRegex.test(telInput.value)) {
+        telError.textContent = "Номер телефона должен быть в формате +375XXXXXXXXX.";
+        telError.style.display = 'block';
+        valid = false;
+      } else {
+        telError.style.display = 'none';
+      }
+
+      // Проверка пароля
+      const passInput = document.getElementById('pass');
+      const passError = document.getElementById('passError');
+      if (passInput.value.length < 8) {
+        passError.textContent = "Пароль должен быть не менее 8 символов.";
+        passError.style.display = 'block';
+        valid = false;
+      } else {
+        passError.style.display = 'none';
+      }
+
+      // Если все поля валидны, отправляем форму
+      if (valid) {
+        alert("Форма успешно отправлена!");
+        authFormContainer.classList.remove('active');
+        overlay.classList.remove('active');
+      }
+    });
+  </script>
+ -------->
+
+ 
+
+  <section class="hero">
+    <div class="hero-text">
+      <p>Минск</p>
+      <h1>AutoFather</h1>
+      <p>Автосервис по ремонту<br> и обслуживанию легковых<br> автомобилей</p>
+    </div>
+    <div class="callback-form">
+      <h2>Заказать обратный звонок</h2>
+      <p>Заполните данные и наш менеджер<br> свяжется с Вами в ближайшее время</p>
+      <form id="callbackForm">
+        <input type="text" id="name" placeholder="Ваше имя*" required>
+        <small id="nameError" class="error-message"></small>
+        <input type="tel" id="tel" placeholder="Ваш номер телефона*" required>
+        <small id="telError" class="error-message"></small>
+        <button type="submit">ПЕРЕЗВОНИТЕ МНЕ</button>
+      </form>
+      <p class="policy">
+        Нажимая кнопку "Перезвоните мне", я даю<br> согласие на обработку персональных данных<br> и соглашаюсь с
+        условиями политики<br> конфиденциальности.
+      </p>
+    </div>
+  </section>
+
+
+
+
+  <script>
+    document.getElementById('callbackForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      let valid = true;
+
+      // Проверка имени
+      const nameInput = document.getElementById('name');
+      const nameError = document.getElementById('nameError');
+      const nameRegex = /^[A-ZА-Я][a-zа-яё]*$/;
+      if (!nameRegex.test(nameInput.value)) {
+        nameError.textContent = "Имя должно начинаться с заглавной буквы.";
+        nameError.style.display = 'block';
+        nameInput.classList.add('error');
+        valid = false;
+      } else {
+        nameError.style.display = 'none';
+        nameInput.classList.remove('error');
+      }
+
+      // Проверка телефона
+      const telInput = document.getElementById('tel');
+      const telError = document.getElementById('telError');
+      const telRegex = /^\+375\d{9}$/;
+      if (!telRegex.test(telInput.value)) {
+        telError.textContent = "Номер телефона должен быть в формате +375XXXXXXXXX.";
+        telError.style.display = 'block';
+        telInput.classList.add('error');
+        valid = false;
+      } else {
+        telError.style.display = 'none';
+        telInput.classList.remove('error');
+      }
+
+
+      if (valid) {
+        alert("Форма успешно отправлена!");
+        this.submit();
+      }
+    });
+
+
+    const closeButton = document.getElementById('close-btn');
+    const registerForm = document.querySelector('.register-form');
+
+    closeButton.addEventListener('click', function () {
+      registerForm.classList.add('hidden');
+    });
+
+  </script>
+
+
+
+
+  <!-- Почему мы -->
+  <section class="why-us">
+    <h2 id="Why">Почему мы?</h2>
+    <div class="features">
+
+      <div class="feature">
+        <img src="Диплом/опыт.png" alt="Качество">
+        <p id="namewhy">Качество</p>
+        <p id="text">Все механики имеют огромный<br> опыт и высокую квалификацию.</p>
+      </div>
+      <div class="feature">
+        <img src="Диплом/скорость.png" alt="Скорость">
+        <p id="namewhy">Скорость</p>
+        <p id="text">В автосервисе 5 подъемников. Стараемся<br> выполнять работы день в день!</p>
+      </div>
+      <div class="feature">
+        <img src="Диплом/цена.png" alt="Стоимость">
+        <p id="namewhy">Стоимость</p>
+        <p id="text">Средняя стоимость работ по<br> Минску, доступная каждому.</p>
+      </div>
+      <div class="feature">
+        <img src="Диплом/гарантия.png" alt="Гарантия">
+        <p id="namewhy">Гарантия</p>
+        <p id="text">Гарантия на работу мастера до 3<br> месяцев</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Блок с элементами: согласование, детали -->
+  <section class="repair-steps">
+
+    <div class="mid-photo">
+      <img src="Диплом/girl.jpg" alt="Фотография автосервиса">
+    </div>
+
+
+    <div class="repair-details">
+      <div class="repair-step">
+        <img src="Диплом/1.png" alt="Согласование">
+        <div class="repair-text">
+          <h3>Согласуем каждый этап ремонта</h3>
+          <p>На одно действие по ремонту автомобиля не проводится без согласования с клиентом.</p>
+        </div>
+      </div>
+
+      <div class="repair-step">
+        <img src="Диплом/2.png" alt="Возврат деталей">
+        <div class="repair-text">
+          <h3>Возвращаем ваши старые детали</h3>
+          <p>Это дополнительный гарант честного оказания услуг.</p>
+        </div>
+      </div>
+
+      <div class="repair-step">
+        <img src="Диплом/3.png" alt="Подбор запчастей">
+        <div class="repair-text">
+          <h3>Сам подбираем и доставляем запчасти</h3>
+          <p>Сэкономьте свое время и нервы, доверяя нам поиск и доставку запчастей.</p>
+        </div>
+      </div>
+
+      <div class="repair-step">
+        <img src="Диплом/4.png" alt="Механики">
+        <div class="repair-text">
+          <h3>Профессиональные механики</h3>
+          <p>У нас работают только опытные специалисты с профильным образованием и большим опытом.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Как мы работаем -->
+  <section class="how-we-work">
+    <h2>Как мы работаем</h2>
+    <div class="content">
+
+      <div class="text-section">
+        <ul>
+          <li>
+            <div class="title">
+              <img src="Диплом/стрелка.png" alt="Стрелка">
+              <img src="Диплом/стрелка.png" alt="Стрелка">
+              <strong>Заявка</strong>
+            </div>
+            <p>Оставьте заявку по телефону или на нашем сайте.</p>
+          </li>
+          <li>
+            <div class="title">
+              <img src="Диплом/стрелка.png" alt="Стрелка">
+              <img src="Диплом/стрелка.png" alt="Стрелка">
+              <strong>Консультация</strong>
+            </div>
+            <p>Даем консультацию и определяем дату и время ремонта авто, а также конечную стоимость работ.</p>
+          </li>
+          <li>
+            <div class="title">
+              <img src="Диплом/стрелка.png" alt="Стрелка">
+              <img src="Диплом/стрелка.png" alt="Стрелка">
+              <strong>Ремонт</strong>
+            </div>
+            <p>Осуществляем ремонт или профилактику, диагностику авто в нашем сервисе.</p>
+          </li>
+          <li>
+            <div class="title">
+              <img src="Диплом/стрелка.png" alt="Стрелка">
+              <img src="Диплом/стрелка.png" alt="Стрелка">
+              <strong>Проверка и оплата</strong>
+            </div>
+            <p>Вы проверяете авто, мастер сообщает о готовности, после чего вы оплачиваете работу.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="image-section">
+        <img src="Диплом/фото.png" alt="Процесс ремонта">
+      </div>
+    </div>
+  </section>
+
+  <!-- Фото автосервиса -->
+  <section class="gallery">
+    <h2>Фото автосервиса</h2>
+    <p>Профессионально оборудованная ремонтная зона. Комфортная клиентская зона с бесплатным кофе, чаем и WI-FI</p>
+    <div class="photos">
+      <img src="Диплом/photo1.jpg" alt="Фото 1">
+      <img src="Диплом/photo2.jpg" alt="Фото 2">
+      <img src="Диплом/photo3.jpg" alt="Фото 3">
+      <img src="Диплом/photo4.jpeg" alt="Фото 4">
+      <img src="Диплом/photo5.jpg" alt="Фото 5">
+      <img src="Диплом/photo6.jpg" alt="Фото 6">
+      <img src="Диплом/photo7.jpg" alt="Фото 7">
+      <img src="Диплом/photo8.jpg" alt="Фото 8">
+      <img src="Диплом/photo9.png" id="foto" alt="Фото 9">
+
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.7639296890165!2d27.4294622!3d53.8826247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbdae5b29e0b49%3A0x9ef4853f9f04afb2!2z0YPQu9C40YbQsCDQqNCw0YDQsNC90LPQvtCy0LjRh9CwIDY0LCDQnNC40L3RgdC6LCDQnNC40L3RgdC60LDRjyDQvtCx0LvQsNGB0YLRjCAyMjAwMTk!5e0!3m2!1sru!2sby!4v1732467251643!5m2!1sru!2sby"
+          width=" 1000" height="811" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="contact-info">
+        <h3>Контакты</h3>
+        <p><img src="Диплом/Гараж.png" alt="Адрес"> г. Минск, ул. Шаранговича 64</p>
+        <p class="tel"><img src="Диплом/телефон.png" alt="Телефон"> <a href="tel: 8 (029) 768 33 88">8 (029) 768 33
+            88</a></p>
+
+        <p><img src="Диплом/часы.png" alt="Время работы" id="time"> Ежедневно 09:00 - 21:00</p>
+        <div class="social-icons">
+          <a href="#"><img src="Диплом/инста.png" alt="Instagram"></a>
+          <a href="#"><img src="Диплом/телеграм.png" alt="Telegram"></a>
+          <a href="#"><img src="Диплом/вайбер.png" alt="Viber"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© ООО "AutoFather", УНП 191835164 | 2016-2024.<br>
+        Все права защищены. Информация на сайте не является публичной офертой.<br>
+        Автор сайта: Васильева Диана.
+      </p>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
