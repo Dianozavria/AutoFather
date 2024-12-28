@@ -1,262 +1,238 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Профиль пользователя</title>
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="profile.css" />
     <link href="https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800" rel="stylesheet" />
     <script src="burger.js"></script>
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <!-- Шапка сайта -->
     <header>
-        <div class="top-navigation">
-            <div class="top-bar">
-                <div class="logo">
-                    <a href="main.html">
-                        <img src="./Диплом/лого.png" alt="AutoFather Logo">
-                    </a>
-                </div>
-                <nav class="menu">
-                    <a href="main.html">Главная</a>
-                    <a href="services.html">Услуги</a>
-                    <a href="./Forms/orderform.html">Запись</a>
+      <div class="top-navigation">
+        <div class="top-bar">
+          <div class="logo">
+            <a href="main.html">
+              <img src="./Диплом/лого.png" alt="AutoFather Logo" />
+            </a>
+          </div>
+          <nav class="menu">
+            <a href="main.html">Главная</a>
+            <a href="services.html">Услуги</a>
+            <a href="./Forms/orderform.html">Запись</a>
 
-                    <a href="question.html">Форум</a>
-                    <a href="contacs.html">Контакты</a>
-                    <a href="./Forms/loginform.html"><img src="Диплом/Профиль.png"></a>
-                </nav>
+            <a href="question.html">Форум</a>
+            <a href="contacs.html">Контакты</a>
+            <a href="./Forms/loginform.html"><img src="Диплом/Профиль.png" /></a>
+          </nav>
 
-                <div class="burger-menu" onclick="toggleMenu()">
-                    <img src="Диплом/burger.png" alt="Меню">
-                  </div>
+          <div class="burger-menu" onclick="toggleMenu()">
+            <img src="Диплом/burger.png" alt="Меню" />
+          </div>
 
-                <div class="contact-info-header">
-                    <div class="place">
-                        <img src="Диплом/место.png" alt="Местоположение">
-                        <p>Шаранговича 64</p>
-                    </div>
-                    <div class="number">
-                        <p class="phone"><a href="tel: 8 (029) 768 33 88">8 (029) 768 33 88</a></p>
-                        <p>Ежедневно 09:00 - 21:00</p>
-                    </div>
-
-                </div>
+          <div class="contact-info-header">
+            <div class="place">
+              <img src="Диплом/место.png" alt="Местоположение" />
+              <p>Шаранговича 64</p>
             </div>
+            <div class="number">
+              <p class="phone"><a href="tel: 8 (029) 768 33 88">8 (029) 768 33 88</a></p>
+              <p>Ежедневно 09:00 - 21:00</p>
+            </div>
+          </div>
         </div>
+      </div>
     </header>
 
-    
     <nav class="breadcrumbs">
-        <a href="main.html">Главная | </a>
-        <span>Личный кабинет</span>
+      <a href="main.html">Главная | </a>
+      <span>Личный кабинет</span>
     </nav>
 
     <div class="sidebar">
-        <h2>Личный кабинет</h2>
-        <a href="#profile" onclick="showSection('profile')">Профиль</a>
-        <a href="#cars" onclick="showSection('cars')">Машины</a>
-        <a href="#orders" onclick="showSection('orders')">Заказы</a>
-        <a href="#reviews" onclick="showSection('reviews')">Отзывы</a>
-        <a href="#questions" onclick="showSection('questions')">Вопросы</a>
-
-
+      <h2>Личный кабинет</h2>
+      <a href="#profile" onclick="showSection('profile')">Профиль</a>
+      <a href="#cars" onclick="showSection('cars')">Машины</a>
+      <a href="#orders" onclick="showSection('orders')">Заказы</a>
+      <a href="#reviews" onclick="showSection('reviews')">Отзывы</a>
+      <a href="#questions" onclick="showSection('questions')">Вопросы</a>
     </div>
 
     <div class="main">
-        <!-- Раздел: Профиль -->
-        <div class="section" id="profile">
-            <h2>Учетная запись</h2>
-            <div class="card">
-                <div class="card-item"><strong>Имя:</strong> Иван</div>
-                <div class="card-item"><strong>Фамилия:</strong> Иванов</div>
-                <div class="card-item"><strong>Телефон:</strong> +7 912 345-67-89</div>
-                <div class="card-item"><strong>Email:</strong> ivan@example.com</div>
-                <div class="card-item"><strong>Пароль:</strong> 12345678</div>
-                <div class="card-actions">
-                    <button class="btn">Редактировать</button>
-                    <button class="btn">Удалить</button>
-                </div>
-            </div>
+      <!-- Раздел: Профиль -->
+      <div class="section" id="profile">
+        <h2>Учетная запись</h2>
+        <div class="card">
+          <div class="card-item"><strong>Имя:</strong> Иван</div>
+          <div class="card-item"><strong>Фамилия:</strong> Иванов</div>
+          <div class="card-item"><strong>Телефон:</strong> +7 912 345-67-89</div>
+          <div class="card-item"><strong>Email:</strong> ivan@example.com</div>
+          <div class="card-item"><strong>Пароль:</strong> 12345678</div>
+          <div class="card-actions">
+            <button class="btn">Редактировать</button>
+            <button class="btn">Удалить</button>
+          </div>
+        </div>
+      </div>
 
+      <!-- Машины -->
+      <div class="section" id="cars">
+        <h2>Машины</h2>
+        <div class="card">
+          <div class="card-item"><strong>Марка:</strong> BMW</div>
+          <div class="card-item"><strong>Модель:</strong> X5</div>
+          <div class="card-item"><strong>Год:</strong> 2021</div>
+
+          <div class="card-actions">
+            <button class="btn">Редактировать</button>
+            <button class="btn">Удалить</button>
+            <button class="btn">Добавить машину</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Раздел: Отзывы -->
+      <div class="section" id="reviews">
+        <h2>Отзывы</h2>
+
+        <div class="card">
+          <div class="card-item"><strong>Услуга:</strong> Замена масла</div>
+          <div class="card-item"><strong>Отзыв:</strong> Отличный сервис!</div>
+          <div class="card-item"><strong>Рейтинг:</strong> 5</div>
+
+          <div class="card-actions">
+            <button class="btn">Удалить</button>
+          </div>
         </div>
 
-
-        <!-- Машины -->
-        <div class="section" id="cars">
-            <h2>Машины</h2>
-            <div class="card">
-                <div class="card-item"><strong>Марка:</strong> BMW</div>
-                <div class="card-item"><strong>Модель:</strong> X5</div>
-                <div class="card-item"><strong>Год:</strong> 2021</div>
-
-                <div class="card-actions">
-                    <button class="btn">Редактировать</button>
-                    <button class="btn">Удалить</button>
-                    <button class="btn">Добавить машину</button>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- Раздел: Отзывы -->
-        <div class="section" id="reviews">
-            <h2>Отзывы</h2>
-
-            <div class="card">
-                <div class="card-item"><strong>Услуга:</strong> Замена масла</div>
-                <div class="card-item"><strong>Отзыв:</strong> Отличный сервис!</div>
-                <div class="card-item"><strong>Рейтинг:</strong> 5</div>
-               
-        
-                <div class="card-actions">
-                    <button class="btn">Удалить</button>
-                </div>
-            </div>
-
-            
-            <!-- Поле для ввода отзыва 
+        <!-- Поле для ввода отзыва 
     <div id="review-form" class="form-container">
         <h2>Оставить отзыв</h2>
         <textarea placeholder="Ваш отзыв..." rows="4"
             style="width: 80%; border: 1px solid #D9D9D9; border-radius: 10px;"></textarea>
         <button class="otz">Отправить отзыв</button>
     </div>-->
+      </div>
+
+      <!-- Раздел: Вопросы -->
+      <div class="section" id="questions">
+        <h2>Вопросы пользователей</h2>
+
+        <div class="card">
+          <div class="card-item"><strong>Вопрос:</strong> Как записаться на ремонт?</div>
+          <div class="card-item"><strong>Ответ:</strong></div>
+
+          <div class="card-actions">
+            <button class="btn">Удалить</button>
+          </div>
         </div>
 
-        <!-- Раздел: Вопросы -->
-        <div class="section" id="questions">
-            <h2>Вопросы пользователей</h2>
-            
-            <div class="card">
-                <div class="card-item"><strong>Вопрос:</strong> Как записаться на ремонт?</div>
-                <div class="card-item"><strong>Ответ:</strong> </div>
-      
-               
-        
-                <div class="card-actions">
-                    <button class="btn">Удалить</button>
-                    
-                </div>
-            </div>
+        <!-- Поле для ввода вопроса -->
+        <div id="question-form" class="form-container">
+          <h2>Задать вопрос</h2>
+          <textarea placeholder="Ваш вопрос..." rows="4" style="border: 1px solid #d9d9d9; border-radius: 10px"></textarea>
+          <button class="que">Отправить</button>
+        </div>
+      </div>
 
+      <!-- Раздел: Заказы -->
+      <div class="section" id="orders">
+        <h2>История заказов</h2>
 
-
-
-            <!-- Поле для ввода вопроса -->
-            <div id="question-form" class="form-container">
-                <h2>Задать вопрос</h2>
-                <textarea placeholder="Ваш вопрос..." rows="4"
-                    style=" border: 1px solid #D9D9D9; border-radius: 10px;"></textarea>
-                <button class="que">Отправить </button>
-            </div>
+        <div class="order">
+          <p><strong>ID заказа:</strong> #12345</p>
+          <p><strong>Услуга:</strong> Замена масла</p>
+          <p><strong>Дата:</strong> 15.11.2024</p>
+          <p><strong>Стоимость:</strong>128 руб</p>
+          <p><strong>Статус:</strong> Завершен</p>
+          <div class="card-actions">
+            <button class="btn">Оставить отзыв</button>
+          </div>
         </div>
 
-
-        <!-- Раздел: Заказы -->
-        <div class="section" id="orders">
-            <h2>История заказов</h2>
-
-            <div class="order">
-                <p><strong>ID заказа:</strong> #12345</p>
-                <p><strong>Услуга:</strong> Замена масла</p>
-                <p><strong>Дата:</strong> 15.11.2024</p>
-                <p><strong>Стоимость:</strong>128 руб</p>
-                <p><strong>Статус:</strong> Завершен</p>
-                <div class="card-actions">
-                    <button class="btn">Оставить отзыв</button>
-                </div>
-            </div>
-
-            <div class="order">
-                <p><strong>ID заказа</strong> #12346</p>
-                <p><strong>Услуга:</strong> Ремонт двигателя</p>
-                <p><strong>Дата:</strong> 20.11.2024</p>
-                <p><strong>Стоимость</strong> 335 руб</p>
-                <p><strong>Статус:</strong> В процессе</p>
-                <div class="card-actions">
-                    <button class="btn">Оставить отзыв</button>
-                </div>
-            </div>
-
-            <div class="pagination">
-                <button onclick="loadPage(1)">1</button>
-                <button onclick="loadPage(2)">2</button>
-                <button onclick="loadPage(3)">3</button>
-                <button onclick="nextPage()">Вперед</button>
-            </div>
+        <div class="order">
+          <p><strong>ID заказа</strong> #12346</p>
+          <p><strong>Услуга:</strong> Ремонт двигателя</p>
+          <p><strong>Дата:</strong> 20.11.2024</p>
+          <p><strong>Стоимость</strong> 335 руб</p>
+          <p><strong>Статус:</strong> В процессе</p>
+          <div class="card-actions">
+            <button class="btn">Оставить отзыв</button>
+          </div>
         </div>
 
+        <div class="pagination">
+          <button onclick="loadPage(1)">1</button>
+          <button onclick="loadPage(2)">2</button>
+          <button onclick="loadPage(3)">3</button>
+          <button onclick="nextPage()">Вперед</button>
+        </div>
+      </div>
+    </div>
 
-        <script>
-            let currentPage = 1;
+    <script>
+      let currentPage = 1;
 
-            function loadPage(pageNumber) {
-                currentPage = pageNumber;
-                fetchOrders(pageNumber); // Функция для загрузки заказов из базы данных
-            }
+      function loadPage(pageNumber) {
+        currentPage = pageNumber;
+        fetchOrders(pageNumber); // Функция для загрузки заказов из базы данных
+      }
 
-            function nextPage() {
-                loadPage(currentPage + 1);
-            }
+      function nextPage() {
+        loadPage(currentPage + 1);
+      }
 
-            function fetchOrders(pageNumber) {
-                // AJAX-запрос для получения данных с сервера
-                fetch(`/api/orders?page=${pageNumber}`)
-                    .then(response => response.json())
-                    .then(data => renderOrders(data));
-            }
+      function fetchOrders(pageNumber) {
+        // AJAX-запрос для получения данных с сервера
+        fetch(`/api/orders?page=${pageNumber}`)
+          .then((response) => response.json())
+          .then((data) => renderOrders(data));
+      }
 
-            function renderOrders(orders) {
-                const ordersContainer = document.getElementById('orders');
-                ordersContainer.innerHTML = ''; // Очищаем контейнер
-                orders.forEach(order => {
-                    const orderElement = document.createElement('div');
-                    orderElement.classList.add('order');
-                    orderElement.innerHTML = `
+      function renderOrders(orders) {
+        const ordersContainer = document.getElementById("orders");
+        ordersContainer.innerHTML = ""; // Очищаем контейнер
+        orders.forEach((order) => {
+          const orderElement = document.createElement("div");
+          orderElement.classList.add("order");
+          orderElement.innerHTML = `
             <p><strong>Дата:</strong> ${order.date}</p>
             <p><strong>Услуга:</strong> ${order.service}</p>
             <p><strong>Сумма:</strong> ${order.amount} руб.</p>
         `;
-                    ordersContainer.appendChild(orderElement);
-                });
-            }
+          ordersContainer.appendChild(orderElement);
+        });
+      }
+    </script>
 
-        </script>
+    <script>
+      function showSection(sectionId) {
+        // Скрыть все секции
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => section.classList.remove("active"));
 
-        <script>
-            function showSection(sectionId) {
-                // Скрыть все секции
-                const sections = document.querySelectorAll('.section');
-                sections.forEach(section => section.classList.remove('active'));
+        // Скрыть все формы
+        const forms = document.querySelectorAll(".form-container");
+        forms.forEach((form) => (form.style.display = "none"));
 
-                // Скрыть все формы
-                const forms = document.querySelectorAll('.form-container');
-                forms.forEach(form => form.style.display = 'none');
+        // Показать выбранную секцию
+        const selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+          selectedSection.classList.add("active");
+        }
 
-                // Показать выбранную секцию
-                const selectedSection = document.getElementById(sectionId);
-                if (selectedSection) {
-                    selectedSection.classList.add('active');
-                }
-
-                // Показать форму для отзыва или вопроса, если выбрана соответствующая категория
-                if (sectionId === 'reviews') {
-                    const reviewForm = document.getElementById('review-form');
-                    if (reviewForm) reviewForm.style.display = 'block';
-                } else if (sectionId === 'questions') {
-                    const questionForm = document.getElementById('question-form');
-                    if (questionForm) questionForm.style.display = 'block';
-                }
-            }
-        </script>
-
-</body>
-
+        // Показать форму для отзыва или вопроса, если выбрана соответствующая категория
+        if (sectionId === "reviews") {
+          const reviewForm = document.getElementById("review-form");
+          if (reviewForm) reviewForm.style.display = "block";
+        } else if (sectionId === "questions") {
+          const questionForm = document.getElementById("question-form");
+          if (questionForm) questionForm.style.display = "block";
+        }
+      }
+    </script>
+  </body>
 </html>
