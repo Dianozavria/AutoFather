@@ -1,89 +1,83 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Запись в автосервис</title>
-    <link rel="stylesheet" href="orderform.css">
+    <link rel="stylesheet" href="orderform.css" />
     <link href="https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800" rel="stylesheet" />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="form-container">
+      <div class="cross"><img src="../Диплом/cross.png" /></div>
+      <h2>Записаться в автосервис</h2>
+      <form>
+        <!-- Выбор услуги -->
+        <div class="form-group">
+          <label for="service">Выберите услугу <span class="required">*</span></label>
+          <select id="service" required>
+            <option value="" disabled selected>Выберите услугу</option>
+            <optgroup label="Заправка кондиционера">
+              <option value="oil-change">Ремонт кондиционера</option>
+              <option value="tire-replacement">Фильтр салонный</option>
+            </optgroup>
+            <optgroup label="Ремонт тормозов">
+              <option value="oil-change">Колодки ручника</option>
+              <option value="tire-replacement">Суппорт</option>
+            </optgroup>
+            <optgroup label="Замена жидкостей">
+              <option value="oil-change">Антифриз</option>
+              <option value="tire-replacement">Тормозная жидкость</option>
+            </optgroup>
+          </select>
+        </div>
 
-        <div class="cross"><img src="../Диплом/cross.png"></div>
-        <h2>Записаться в автосервис</h2>
-        <form>
-            <!-- Выбор услуги -->
-            <div class="form-group">
-                <label for="service">Выберите услугу <span class="required">*</span></label>
-                <select id="service" required>
-                    <option value="" disabled selected>Выберите услугу</option>
-                    <optgroup label="Заправка кондиционера">
-                        <option value="oil-change">Ремонт кондиционера</option>
-                        <option value="tire-replacement">Фильтр салонный</option>
-                    </optgroup>
-                    <optgroup label="Ремонт тормозов">
-                        <option value="oil-change">Колодки ручника</option>
-                        <option value="tire-replacement">Суппорт</option>
-                    </optgroup>
-                    <optgroup label="Замена жидкостей">
-                        <option value="oil-change">Антифриз</option>
-                        <option value="tire-replacement">Тормозная жидкость</option>
-                    </optgroup>
-                </select>
-            </div>
+        <!-- Выбор автомобиля -->
+        <div class="form-group">
+          <label for="car">Выберите автомобиль <span class="required">*</span></label>
+          <select id="car" required>
+            <option value="" disabled selected>Выберите автомобиль</option>
+            <option value="toyota">Toyota</option>
+            <option value="bmw">BMW</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="honda">Honda</option>
+          </select>
+        </div>
 
-            <!-- Выбор автомобиля -->
-            <div class="form-group">
-                <label for="car">Выберите автомобиль <span class="required">*</span></label>
-                <select id="car" required>
-                    <option value="" disabled selected>Выберите автомобиль</option>
-                    <option value="toyota">Toyota</option>
-                    <option value="bmw">BMW</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="honda">Honda</option>
-                </select>
-            </div>
+        <!-- Имя -->
+        <div class="form-group">
+          <label for="name">Ваше имя <span class="required">*</span></label>
+          <input type="text" id="name" placeholder="Введите ваше имя" required />
+        </div>
 
-            <!-- Имя -->
-            <div class="form-group">
-                <label for="name">Ваше имя <span class="required">*</span></label>
-                <input type="text" id="name" placeholder="Введите ваше имя" required>
-            </div>
+        <!-- Телефон -->
+        <div class="form-group">
+          <label for="phone">Телефон <span class="required">*</span></label>
+          <input type="tel" id="phone" placeholder="Введите ваш телефон" required />
+        </div>
 
-            <!-- Телефон -->
-            <div class="form-group">
-                <label for="phone">Телефон <span class="required">*</span></label>
-                <input type="tel" id="phone" placeholder="Введите ваш телефон" required>
-            </div>
+        <!-- Дата и время -->
+        <div class="form-group">
+          <label for="datetime">Желаемая дата и время</label>
+          <input type="datetime-local" id="datetime" />
+        </div>
 
-            <!-- Дата и время -->
-            <div class="form-group">
-                <label for="datetime">Желаемая дата и время</label>
-                <input type="datetime-local" id="datetime">
-            </div>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="Введите ваш email" />
+        </div>
 
-            <!-- Email -->
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Введите ваш email">
-            </div>
+        <!-- Комментарий -->
+        <div class="form-group">
+          <label for="comment">Комментарий</label>
+          <textarea id="comment" placeholder="Ваш комментарий..."></textarea>
+        </div>
 
-            <!-- Комментарий -->
-            <div class="form-group">
-                <label for="comment">Комментарий</label>
-                <textarea id="comment" placeholder="Ваш комментарий..."></textarea>
-            </div>
-
-            <!-- Кнопка отправки -->
-            <button type="submit" class="submit-button">Записаться</button>
-        </form>
+        <!-- Кнопка отправки -->
+        <button type="submit" class="submit-button">Записаться</button>
+      </form>
     </div>
-
-</body>
-
+  </body>
 </html>
